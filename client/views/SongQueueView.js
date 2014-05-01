@@ -16,7 +16,7 @@ var SongQueueView = Backbone.View.extend({
     this.collection.on('removeAt', function() {
       this.render();
     }, this);
-
+    // this.collection.on('change', this.render, this); why?
   },
 
   events: {

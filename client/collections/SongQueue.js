@@ -17,8 +17,15 @@ var SongQueue = Songs.extend({
       this.shift();
     }, this);
     this.on('removeAt', function(song) {
-      console.log('test', song);
-      this.remove(song);
+      var isFirst = false;
+      if (song.cid === this.at(0).cid) {
+        isFirst = true;
+      }
+      if (isFirst) {
+        song.ended();
+      } else {
+        this.remove(song);
+      }
     }, this);
 
   },
