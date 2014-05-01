@@ -13,18 +13,14 @@ var SongQueueView = Backbone.View.extend({
     this.collection.on('ended', function() {
       this.render();
     }, this);
+    this.collection.on('removeAt', function() {
+      this.render();
+    }, this);
 
   },
 
   events: {
-    'click .dequeue': function(test) {
-      // this.model.dequeue();
-      // this.render();
-      console.log(this);
-      console.log(test);
-      this.collection.models.remove(this.model);
 
-    }
   },
 
   render: function() {
