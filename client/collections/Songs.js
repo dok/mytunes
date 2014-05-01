@@ -2,7 +2,6 @@
 var Songs = Backbone.Collection.extend({
 
   initialize: function() {
-
   },
   model: SongModel
 

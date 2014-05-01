@@ -2,10 +2,7 @@
 var PlayerView = Backbone.View.extend({
 
   initialize: function() {
-    this.model.on('ended', function() {
-      console.log('this');
-      this.render();
-    }, this);
+
   },
 
   // HTML5 (native) audio tag is being used

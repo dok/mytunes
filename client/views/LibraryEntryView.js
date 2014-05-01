@@ -8,7 +8,9 @@ var LibraryEntryView = Backbone.View.extend({
   template: _.template($('#libraryEntryTemplate').html()),
 
   initialize: function() {
-
+    this.model.on('change:playCount', function() {
+      this.render();
+    }, this);
   },
 
   events: {

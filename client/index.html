@@ -8,7 +8,10 @@
   <body>
     <script id="libraryEntryTemplate" type="text/html">
         <div class="songInner">
-            <div class="play"><%= artist %></div><div class="play"><%= title %></div><div class="enqueue"><button>+</button></div>
+            <div class="play"><%= artist %></div>
+            <div class="play"><%= title %></div>
+            <div class="playCount"><%= playCount %></div>
+            <div class="enqueue"><button>+</button></div>
         </div>
     </script>
 
@@ -63,6 +66,7 @@
         var library = new Songs(songData);
         var app = new AppModel({library: library});
 
+        window.library = library;
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
 
