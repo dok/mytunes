@@ -7,11 +7,15 @@
 </head>
   <body>
     <script id="libraryEntryTemplate" type="text/html">
-        <td class="play"><%= artist %></td><td class="play"><%= title %></td><td class="enqueue"><button>+</button></td>
+        <div class="songInner">
+            <div class="play"><%= artist %></div><div class="play"><%= title %></div><div class="enqueue"><button>+</button></div>
+        </div>
     </script>
 
     <script id="songQueueTemplate" type="text/html">
-        <td><%= artist %></td><td><%= title %></td><td class="dequeue"><button>X</button></td>
+        <div class="queueInner">
+            <div><%= title %></div><div class="dequeue"><button>X</button></div>
+        </div>
     </script>
 
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
@@ -36,7 +40,19 @@
 
 
     <div class="container">
-
+        <div class="row">
+            <div class="sixteen columns">
+                <h2>Mytunes</h2>
+            </div>
+        </div>
+        <div class="main row">
+            <div class="libraryHeader ten columns">
+                Artist / Song / Add
+            </div>
+            <div class="queueHeader six columns">
+            Song / Remove from Playlist
+            </div>
+        </div>
     </div>
 
 
@@ -51,7 +67,7 @@
         var appView = new AppView({model: app});
 
         // put the view onto the screen
-        $('.container').append(appView.render());
+        $('.main').append(appView.render());
       });
     </script>
   </body>
