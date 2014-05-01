@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+</head>
   <body>
+    <script id="libraryEntryTemplate" type="text/html">
+        <td class="play"><%= artist %></td><td class="play"><%= title %></td><td class="enqueue"><button>+</button></td>
+    </script>
+
+    <script id="songQueueTemplate" type="text/html">
+        <td><%= artist %></td><td><%= title %></td><td class="dequeue"><button>X</button></td>
+    </script>
+
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
     <script src="bower_components/jquery/jquery.min.js"></script>
@@ -21,6 +34,13 @@
     <script src="views/SongQueueEntryView.js"></script>
     <script src="views/AppView.js"></script>
 
+
+    <div class="container">
+
+    </div>
+
+
+
     <script>
       $(function(){
         // set up model objects
@@ -31,7 +51,7 @@
         var appView = new AppView({model: app});
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        $('.container').append(appView.render());
       });
     </script>
   </body>

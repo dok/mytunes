@@ -2,7 +2,7 @@
 var PlayerView = Backbone.View.extend({
 
   initialize: function() {
-    this.model.on('removeAt', function() {
+    this.model.on('ended', function() {
       console.log('this');
       this.render();
     }, this);

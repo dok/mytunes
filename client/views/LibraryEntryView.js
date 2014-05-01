@@ -3,7 +3,7 @@ var LibraryEntryView = Backbone.View.extend({
 
   tagName: 'tr',
 
-  template: _.template('<td class="play">(<%= artist %>)</td><td class="play"><%= title %></td><td class="enqueue"><button>+</button></td>'),
+  template: _.template($('#libraryEntryTemplate').html()),
 
   initialize: function() {
 
@@ -19,7 +19,8 @@ var LibraryEntryView = Backbone.View.extend({
   },
 
   render: function(){
-    return this.$el.html(this.template(this.model.attributes));
+    var html = this.template(this.model.toJSON());
+    return this.$el.html(html);
   }
 
 });
