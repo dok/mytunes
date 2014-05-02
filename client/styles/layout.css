@@ -94,6 +94,7 @@ body {
 	padding: 10px;
 }
 
+
 .queueInner > div:nth-child(1) {
 	margin-top: 6px;
 }
@@ -110,7 +111,15 @@ body {
 	float: left;
 }
 
+.playlists {
+	margin-top: 30px;
+}
+
 .playlistContainer button {
+}
+
+.playlistHeader {
+	border-bottom: 1px solid black;
 }
 
 .playlistEntry {
@@ -129,7 +138,9 @@ body {
 	float: left;
 	margin-top: 6px;
 	margin-right: 10px;
+	width: 80%;
 }
+
 
 .audio {
 	margin-left: 10px;

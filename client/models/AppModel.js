@@ -40,6 +40,17 @@ var AppModel = Backbone.Model.extend({
       this.set('activePlaylist', playlist);
       playlist.set('isActive', true);
     }, this);
+    this.get('playlists').on('addAllToQueue', function(playlist) {
+      var allSongs = playlist.get('playlist');
+      for (var i = 0; i < allSongs.length; i++) {
+        this.get('songQueue').add(allSongs.at(i));
+      }
+      // this.get('songQueue').add(playlist.get('playlist').models);
+    }, this);
+    params.library.on('removeFromPlaylist', function(song) {
+      console.log('activeplaylist');
+      this.get('activePlaylist').get('playlist').remove(song);
+    }, this);
   }
 
 });
