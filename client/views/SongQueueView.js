@@ -2,23 +2,16 @@
 var SongQueueView = Backbone.View.extend({
   tagName: "div",
 
-  className: 'six columns',
+  className: 'six columns sidebar',
 
   initialize: function() {
     this.render();
     this.collection.on('add', function() {
       this.render();
     }, this);
-    this.collection.on('dequeue', function() {
+    this.collection.on('remove', function() {
       this.render();
     }, this);
-    this.collection.on('ended', function() {
-      this.render();
-    }, this);
-    this.collection.on('removeAt', function() {
-      this.render();
-    }, this);
-    // this.collection.on('change', this.render, this); why?
   },
 
   events: {

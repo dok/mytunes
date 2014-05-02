@@ -41,6 +41,11 @@ body {
 	background-color: gray;
 }
 
+.active {
+	background-color: gray !important;
+	/*font-weight: bold;*/
+}
+
 .songInner {
 /*padding: 10px;*/
 }
@@ -54,7 +59,7 @@ body {
 	margin-top: 15px;
 }
 
-.songInner > .enqueue {
+.songInner > .addToPlaylist {
 	margin-top: 7px;
 }
 
@@ -66,8 +71,12 @@ body {
 	width: 60%;
 }
 
-.songItem > .enqueue {
+.songItem > .addToPlaylist {
 	width: 10%;
+}
+
+.playCount {
+	margin-top: 15px;
 }
 
 .queueItem {
@@ -97,6 +106,34 @@ body {
 	margin-right: 10px;
 }
 
+.playlistContainer input {
+	float: left;
+}
+
+.playlistContainer button {
+}
+
+.playlistEntry {
+	height: 34px;
+}
+
+.playlist {
+	background-color: #eee;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+
+}
+
+.playlistInner > div:nth-child(1) {
+	float: left;
+	margin-top: 6px;
+	margin-right: 10px;
+}
+
+.audio {
+	margin-left: 10px;
+}
 
 /* #Page Styles
 ================================================== */

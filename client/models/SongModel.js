@@ -20,5 +20,8 @@ var SongModel = Backbone.Model.extend({
   },
   remove: function() {
     this.trigger('removeAt', this);
+  },
+  addToPlaylist: function() {
+    this.trigger('addToPlaylist', this);
   }
 });
